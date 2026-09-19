@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "service": "Pragati Bharati Document Intelligence & Question Extraction Service",
+    "version": "1.0.0",
+    "document_title": "Multi-Page Question Continuation Exam",
+    "filename": "sample_multipage_split.pdf",
+    "file_type": "pdf",
+    "page_count": 2,
+    "processing_status": "COMPLETED",
+    "notes": "Scenario 5: Multi-page document where Question 4 begins on Page 1 and continuation options C and D are stitched from Page 2."
+  },
+  "summary": {
+    "total_questions": 5,
+    "high_confidence_count": 4,
+    "needs_review_count": 1,
+    "answers_matched_count": 5
+  },
+  "answer_key": {
+    "source_type": "in_document",
+    "pairs": {
+      "1": "A",
+      "2": "B",
+      "3": "B",
+      "4": "C",
+      "5": "B"
+    },
+    "confidence": 0.98
+  },
+  "questions": [
+    {
+      "id": "q-multi-1",
+      "question_number": "1",
+      "question": "What does the ACID acronym stand for in database transaction management?",
+      "question_type": "MULTIPLE_CHOICE",
+      "options": [
+        { "key": "A", "text": "Atomicity, Consistency, Isolation, Durability" },
+        { "key": "B", "text": "Accuracy, Coherence, Integrity, Distribution" },
+        { "key": "C", "text": "Availability, Concurrency, Indexing, Durability" },
+        { "key": "D", "text": "Asynchronous, Centralized, Immutable, Deterministic" }
+      ],
+      "answer": "A",
+      "answer_confidence": 0.99,
+      "answer_matched": true,
+      "answer_source": "in_document",
+      "source_pages": [1],
+      "confidence": 0.98,
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "id": "q-multi-2",
+      "question_number": "2",
+      "question": "Which consensus algorithm is designed to be easily understood and equivalent to Paxos in fault tolerance?",
+      "question_type": "MULTIPLE_CHOICE",
+      "options": [
+        { "key": "A", "text": "Byzantine Agreement" },
+        { "key": "B", "text": "Raft Consensus" },
+        { "key": "C", "text": "Gossip Protocol" },
+        { "key": "D", "text": "Proof of Work" }
+      ],
+      "answer": "B",
+      "answer_confidence": 0.97,
+      "answer_matched": true,
+      "answer_source": "in_document",
+      "source_pages": [1],
+      "confidence": 0.96,
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "id": "q-multi-3",
+      "question_number": "3",
+      "question": "What is the fundamental mechanism behind Redis in-memory pub/sub message brokering?",
+      "question_type": "MULTIPLE_CHOICE",
+      "options": [
+        { "key": "A", "text": "Persistent WAL log replication" },
+        { "key": "B", "text": "Ephemeral memory-buffered channel broadcasting" },
+        { "key": "C", "text": "Distributed LSM disk tree" },
+        { "key": "D", "text": "Two-phase commit protocol" }
+      ],
+      "answer": "B",
+      "answer_confidence": 0.96,
+      "answer_matched": true,
+      "answer_source": "in_document",
+      "source_pages": [1],
+      "confidence": 0.95,
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "id": "q-multi-4",
+      "question_number": "4",
+      "question": "In a 5-node distributed cluster experiencing a network split between nodes {A, B} and {C, D, E}, determine which partition continues accepting writes under majority quorum rules:",
+      "question_type": "MULTIPLE_CHOICE",
+      "options": [
+        { "key": "A", "text": "Partition {A, B} because node A holds the initial leader lease" },
+        { "key": "B", "text": "Both partitions continue writes independently and merge via CRDTs" },
+        { "key": "C", "text": "Partition {C, D, E} because it maintains a strict quorum majority (>50%)" },
+        { "key": "D", "text": "Neither partition can accept writes until network partition heals" }
+      ],
+      "answer": "C",
+      "answer_confidence": 0.95,
+      "answer_matched": true,
+      "answer_source": "in_document",
+      "source_pages": [1, 2],
+      "confidence": 0.78,
+      "needs_review": true,
+      "review_reasons": [
+        "Question spans multiple pages (Pages 1, 2). Cross-page boundary stitching verified."
+      ]
+    },
+    {
+      "id": "q-multi-5",
+      "question_number": "5",
+      "question": "Under CAP theorem, a distributed database can achieve both strong consistency and 100% availability during a network partition.",
+      "question_type": "TRUE_FALSE",
+      "options": [
+        { "key": "A", "text": "True" },
+        { "key": "B", "text": "False" }
+      ],
+      "answer": "B",
+      "answer_confidence": 0.98,
+      "answer_matched": true,
+      "answer_source": "in_document",
+      "source_pages": [2],
+      "confidence": 0.97,
+      "needs_review": false,
+      "review_reasons": []
+    }
+  ]
+}

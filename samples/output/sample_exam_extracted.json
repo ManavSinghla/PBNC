@@ -1,0 +1,136 @@
+{
+  "metadata": {
+    "service": "Pragati Bharati Document Intelligence & Question Extraction Service",
+    "version": "1.0.0",
+    "document_title": "Standard Computer Science Exam Paper",
+    "filename": "sample_exam.pdf",
+    "file_type": "pdf",
+    "page_count": 1,
+    "processing_status": "COMPLETED",
+    "notes": "Scenario 1 & 4: Multi-question extraction from clean digital PDF with embedded answer key."
+  },
+  "summary": {
+    "total_questions": 5,
+    "high_confidence_count": 3,
+    "needs_review_count": 2,
+    "answers_matched_count": 4
+  },
+  "answer_key": {
+    "source_type": "in_document",
+    "pairs": {
+      "1": "B",
+      "2": "B",
+      "3": "B",
+      "4": "C"
+    },
+    "confidence": 0.94
+  },
+  "questions": [
+    {
+      "id": "q-1",
+      "question_number": "1",
+      "question": "What is the primary function of the Transformer architecture's multi-head self-attention mechanism?",
+      "question_type": "MULTIPLE_CHOICE",
+      "options": [
+        { "key": "A", "text": "To perform sequence recurrent memory retention across timesteps" },
+        { "key": "B", "text": "To attend to information from different representation subspaces at different positions simultaneously" },
+        { "key": "C", "text": "To reduce the dimensional size of embedding vectors" },
+        { "key": "D", "text": "To eliminate the need for feed-forward neural layers" }
+      ],
+      "answer": "B",
+      "answer_confidence": 0.98,
+      "answer_matched": true,
+      "answer_source": "in_document",
+      "source_pages": [1],
+      "confidence": 0.96,
+      "needs_review": false,
+      "review_reasons": [],
+      "is_verified": true
+    },
+    {
+      "id": "q-2",
+      "question_number": "2",
+      "question": "Which data structure provides average O(1) time complexity for insertion, deletion, and search operations?",
+      "question_type": "MULTIPLE_CHOICE",
+      "options": [
+        { "key": "A", "text": "Balanced Binary Search Tree (AVL)" },
+        { "key": "B", "text": "Hash Table with uniform distribution" },
+        { "key": "C", "text": "B-Tree Index" },
+        { "key": "D", "text": "Min-Heap Priority Queue" }
+      ],
+      "answer": "B",
+      "answer_confidence": 0.96,
+      "answer_matched": true,
+      "answer_source": "in_document",
+      "source_pages": [1],
+      "confidence": 0.94,
+      "needs_review": false,
+      "review_reasons": [],
+      "is_verified": false
+    },
+    {
+      "id": "q-3",
+      "question_number": "3",
+      "question": "In PostgreSQL, what is the key difference between an optimistic concurrency control model and row-level advisory locks?",
+      "question_type": "MULTIPLE_CHOICE",
+      "options": [
+        { "key": "A", "text": "Advisory locks prevent writes using MVCC tuple versioning exclusively" },
+        { "key": "B", "text": "Advisory locks provide explicit application-level locking without locking actual table rows" },
+        { "key": "C", "text": "Row-level advisory locks are automatically released upon any SELECT statement" },
+        { "key": "D", "text": "Optimistic concurrency requires serial execution of all transactions" }
+      ],
+      "answer": "B",
+      "answer_confidence": 0.92,
+      "answer_matched": true,
+      "answer_source": "in_document",
+      "source_pages": [1],
+      "confidence": 0.91,
+      "needs_review": false,
+      "review_reasons": [],
+      "is_verified": false
+    },
+    {
+      "id": "q-4",
+      "question_number": "4",
+      "question": "Examine the algorithmic diagram and determine the maximum network flow through the sink vertex t using the Ford-Fulkerson algorithm.",
+      "question_type": "MULTIPLE_CHOICE",
+      "options": [
+        { "key": "A", "text": "14 units" },
+        { "key": "B", "text": "19 units" },
+        { "key": "C", "text": "23 units" },
+        { "key": "D", "text": "28 units" }
+      ],
+      "answer": "C",
+      "answer_confidence": 0.68,
+      "answer_matched": true,
+      "answer_source": "in_document",
+      "source_pages": [1],
+      "confidence": 0.65,
+      "needs_review": true,
+      "review_reasons": [
+        "Diagram text has moderate OCR noise / low contrast scan",
+        "Answer confidence below 70%"
+      ],
+      "is_verified": false
+    },
+    {
+      "id": "q-5",
+      "question_number": "5",
+      "question": "Explain the CAP Theorem and explain why a distributed system can never guarantee both Consistency and Availability under Partition tolerance.",
+      "question_type": "SHORT_ANSWER",
+      "options": [],
+      "answer": null,
+      "answer_confidence": 0.0,
+      "answer_matched": false,
+      "answer_source": "unmatched",
+      "source_pages": [1],
+      "confidence": 0.74,
+      "needs_review": true,
+      "review_reasons": [
+        "Descriptive subjective question format (No automatic answer key pair)",
+        "Requires manual evaluator grading"
+      ],
+      "is_verified": false
+    }
+  ]
+}

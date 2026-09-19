@@ -1,0 +1,91 @@
+{
+  "metadata": {
+    "service": "Pragati Bharati Document Intelligence & Question Extraction Service",
+    "version": "1.0.0",
+    "document_title": "Question Paper Document",
+    "filename": "sample_question_paper.pdf",
+    "file_type": "pdf",
+    "related_document_filename": "sample_answer_key.pdf",
+    "page_count": 1,
+    "processing_status": "COMPLETED",
+    "notes": "Scenario 7: Multi-document pairing where Question Paper is associated with a separate Answer Key document."
+  },
+  "summary": {
+    "total_questions": 3,
+    "high_confidence_count": 3,
+    "needs_review_count": 0,
+    "answers_matched_count": 3
+  },
+  "answer_key": {
+    "source_type": "separate_answer_key",
+    "source_document": "sample_answer_key.pdf",
+    "pairs": {
+      "1": "B",
+      "2": "C",
+      "3": "A"
+    },
+    "confidence": 0.98
+  },
+  "questions": [
+    {
+      "id": "qp-1",
+      "question_number": "1",
+      "question": "What is the worst-case time complexity of QuickSort when using naive pivot selection?",
+      "question_type": "MULTIPLE_CHOICE",
+      "options": [
+        { "key": "A", "text": "O(n log n)" },
+        { "key": "B", "text": "O(n^2)" },
+        { "key": "C", "text": "O(log n)" },
+        { "key": "D", "text": "O(n)" }
+      ],
+      "answer": "B",
+      "answer_confidence": 0.98,
+      "answer_matched": true,
+      "answer_source": "separate_answer_key",
+      "source_pages": [1],
+      "confidence": 0.96,
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "id": "qp-2",
+      "question_number": "2",
+      "question": "Which algorithm is best suited for finding the shortest path in a graph with non-negative edge weights?",
+      "question_type": "MULTIPLE_CHOICE",
+      "options": [
+        { "key": "A", "text": "Bellman-Ford Algorithm" },
+        { "key": "B", "text": "Floyd-Warshall Algorithm" },
+        { "key": "C", "text": "Dijkstra's Algorithm" },
+        { "key": "D", "text": "Kruskal's Algorithm" }
+      ],
+      "answer": "C",
+      "answer_confidence": 0.98,
+      "answer_matched": true,
+      "answer_source": "separate_answer_key",
+      "source_pages": [1],
+      "confidence": 0.97,
+      "needs_review": false,
+      "review_reasons": []
+    },
+    {
+      "id": "qp-3",
+      "question_number": "3",
+      "question": "Which dynamic programming algorithm solves the 0/1 Knapsack problem with weights W and N items?",
+      "question_type": "MULTIPLE_CHOICE",
+      "options": [
+        { "key": "A", "text": "O(N * W) pseudo-polynomial time" },
+        { "key": "B", "text": "O(2^N) exponential time" },
+        { "key": "C", "text": "O(N log N) linearithmic time" },
+        { "key": "D", "text": "O(W^2) polynomial time" }
+      ],
+      "answer": "A",
+      "answer_confidence": 0.98,
+      "answer_matched": true,
+      "answer_source": "separate_answer_key",
+      "source_pages": [1],
+      "confidence": 0.95,
+      "needs_review": false,
+      "review_reasons": []
+    }
+  ]
+}

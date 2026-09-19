@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: pbnc-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: pbnc_user
+      POSTGRES_PASSWORD: pbnc_password
+      POSTGRES_DB: pbnc_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  # Redis Cache & Message Queue
+  redis:
+    image: redis:7-alpine
+    container_name: pbnc-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+  # Backend Service (Node.js + Express)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: pbnc-backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      PORT: 5000
+      NODE_ENV: production
+      DATABASE_URL: postgres://pbnc_user:pbnc_password@postgres:5432/pbnc_db
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: pragati-bharati-doc-intelligence-secret-key-2026
+    volumes:
+      - ./backend/uploads:/app/uploads
+      - ./backend/data:/app/data
+    depends_on:
+      - postgres
+      - redis
+
+  # Frontend Dashboard (Vite + React)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: pbnc-frontend
+    restart: unless-stopped
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:

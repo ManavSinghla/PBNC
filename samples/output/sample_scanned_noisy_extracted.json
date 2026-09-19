@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "service": "Pragati Bharati Document Intelligence & Question Extraction Service",
+    "version": "1.0.0",
+    "document_title": "Low-Resolution Noisy Diagram Scan",
+    "filename": "sample_scanned_noisy.png",
+    "file_type": "png",
+    "page_count": 1,
+    "processing_status": "COMPLETED",
+    "notes": "Scenario 3 & 8: Scanned image with low contrast and smudge, triggering low confidence and manual review flags."
+  },
+  "summary": {
+    "total_questions": 1,
+    "high_confidence_count": 0,
+    "needs_review_count": 1,
+    "answers_matched_count": 0
+  },
+  "answer_key": null,
+  "questions": [
+    {
+      "id": "noisy-1",
+      "question_number": "4",
+      "question": "In the provided logic circuit diagram, if inputs A=1 and B=0 are passed into a NAND gate followed by an XOR gate with C=1, what is the output?",
+      "question_type": "MULTIPLE_CHOICE",
+      "options": [
+        { "key": "A", "text": "0" },
+        { "key": "B", "text": "1" },
+        { "key": "C", "text": "High Impedance (Z)" },
+        { "key": "D", "text": "Undetermined oscillation" }
+      ],
+      "answer": null,
+      "answer_confidence": 0.0,
+      "answer_matched": false,
+      "answer_source": "unmatched",
+      "source_pages": [1],
+      "confidence": 0.62,
+      "needs_review": true,
+      "review_reasons": [
+        "Low contrast scan with image noise",
+        "Answer key smudge detected on physical document",
+        "Confidence score 62% below review threshold"
+      ],
+      "is_verified": false
+    }
+  ]
+}

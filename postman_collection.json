@@ -1,0 +1,289 @@
+{
+  "info": {
+    "_postman_id": "pbnc-doc-intelligence-v1",
+    "name": "PBNC Document Intelligence & Question Extraction API",
+    "description": "Postman Collection demonstrating all 10 evaluation scenarios for Pragati Bharati Round 2 Engineering Assignment.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000",
+      "type": "string"
+    },
+    {
+      "key": "documentId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "questionId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "0. Health & Stats",
+      "item": [
+        {
+          "name": "Healthcheck",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "health"]
+            }
+          }
+        },
+        {
+          "name": "System Stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/stats",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "stats"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "1. Authentication",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"evaluator@pragatibharati.org\",\n  \"password\": \"SecurePass123!\",\n  \"name\": \"Pragati Evaluator\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/auth/register",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "auth", "register"]
+            }
+          }
+        },
+        {
+          "name": "Login User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"evaluator@pragatibharati.org\",\n  \"password\": \"SecurePass123!\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/auth/login",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "auth", "login"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. 10 Demonstration Scenarios",
+      "item": [
+        {
+          "name": "Scenario 1 & 4: Upload / Seed Digital PDF (Multi-Question)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/demo/seed/standard-pdf",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "demo", "seed", "standard-pdf"]
+            }
+          }
+        },
+        {
+          "name": "Scenario 2: Upload / Seed Exam Question Image",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/demo/seed/scanned-image",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "demo", "seed", "scanned-image"]
+            }
+          }
+        },
+        {
+          "name": "Scenario 3 & 8: Scanned / Low-Quality Document with Review Flags",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/demo/seed/low-confidence-scan",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "demo", "seed", "low-confidence-scan"]
+            }
+          }
+        },
+        {
+          "name": "Scenario 5: Multi-Page Split Question (Spanning Pages 1 & 2)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/demo/seed/multipage-split",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "demo", "seed", "multipage-split"]
+            }
+          }
+        },
+        {
+          "name": "Scenario 7: Paired Documents (Question Paper + Answer Key)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/demo/seed/paired-docs",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "demo", "seed", "paired-docs"]
+            }
+          }
+        },
+        {
+          "name": "Scenario 10: Handling Invalid or Corrupt Document (400/Failed)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/demo/seed/invalid-corrupt",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "demo", "seed", "invalid-corrupt"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Document Intelligence & Review Operations",
+      "item": [
+        {
+          "name": "List All Documents",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/documents",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "documents"]
+            }
+          }
+        },
+        {
+          "name": "Track Asynchronous Status (Scenario Tracking)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/documents/{{documentId}}/status",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "documents", "{{documentId}}", "status"]
+            }
+          }
+        },
+        {
+          "name": "Retrieve Extracted Questions (Scenario 4 & 6)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/documents/{{documentId}}/questions",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "documents", "{{documentId}}", "questions"]
+            }
+          }
+        },
+        {
+          "name": "Retrieve Answer Key Associations (Scenario 7)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/documents/{{documentId}}/answer-key",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "documents", "{{documentId}}", "answer-key"]
+            }
+          }
+        },
+        {
+          "name": "Retrieve Extraction Warnings & Review Items (Scenario 8)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/documents/{{documentId}}/review-items",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "documents", "{{documentId}}", "review-items"]
+            }
+          }
+        },
+        {
+          "name": "Human Verification & Edit Action (Reviewer HITL)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"isVerified\": true,\n  \"detectedAnswer\": \"B\",\n  \"needsReview\": false\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/questions/{{questionId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "questions", "{{questionId}}"]
+            }
+          }
+        },
+        {
+          "name": "Export Structured Question JSON (Scenario 9)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/documents/{{documentId}}/export?download=false",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "documents", "{{documentId}}", "export"],
+              "query": [
+                {
+                  "key": "download",
+                  "value": "false"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
